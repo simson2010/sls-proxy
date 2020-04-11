@@ -1,4 +1,4 @@
 .env_temp
 .env
 .DS_Store
-.server
+.serverless
