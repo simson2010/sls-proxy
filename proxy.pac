@@ -32,6 +32,7 @@ function FindProxyForURL(url, host)
 //Return proxy processing by url
 function noGo(url, host){
     if ( 
+        shExpMatch(url, "*woyaogexing.com*") ||
         shExpMatch(url, "*100bt.com*") ||
         shExpMatch(url, "*dm5.com*") ||
         shExpMatch(url, "*anyv.net*") ||
