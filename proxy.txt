@@ -70,9 +70,9 @@ function dummyProxy(){
 
 //Each weekday processing
 function noGoSun(url, host){
-    if (timeRange(01,1, 13,59)) {
+    if (timeRange(01,1, 10,59)) {
         return dummyProxy();
-    } else if(timeRange(16,1, 18,59)) {
+    } else if(timeRange(11,1, 18,59)) {
         return noGo(url, host);
     } else if (timeRange(19,00, 21,00)){
         return noGo(url, host);
@@ -84,7 +84,7 @@ function noGoSun(url, host){
 }
 
 function noGOMon(url, host) {
-    if (timeRange(8, 12)) {
+    if (timeRange(6, 12)) {
         return noGo(url, host);
     } else if (timeRange(15,00, 16,59)){
         return noGo(url, host);
@@ -96,7 +96,7 @@ function noGOMon(url, host) {
 };
 
 function noGoTue(url, host) { 
-    if (timeRange(8, 12)) {
+    if (timeRange(6, 12)) {
         return noGo(url, host);
     } else if (timeRange(15,00, 18,00)){
         return noGo(url, host);
@@ -106,7 +106,7 @@ function noGoTue(url, host) {
 };
 
 function noGoWed(url, host){
-    if (timeRange(8, 12)) {
+    if (timeRange(6, 12)) {
         return noGo(url, host);
     } else if (timeRange(14,00, 15,59)){
         return noGo(url, host);
@@ -134,7 +134,7 @@ function noGoFri(url, host){
 };
 
 function noGoSat(url, host){
-    if (timeRange(01,01, 12, 59)) {
+    if (timeRange(01,01, 10, 59)) {
         return dummyProxy();
     } else if (timeRange(14,00,15,59)){
         return dummyProxy();
