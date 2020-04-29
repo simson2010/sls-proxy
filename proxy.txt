@@ -52,7 +52,7 @@ function noGo(url, host){
         shExpMatch(url, "*acs.youku.com*") ||
         shExpMatch(url, "*youku.com*") ||
         shExpMatch(url, "*soman.com*") ||
-        shExpMatch(url, "*qzone.qq.com*") ||
+        shExpMatch(url, "*qq.com*") ||
         shExpMatch(url, "*xiami.com*") ||
         shExpMatch(url, "*kugou.com*") ||
         shExpMatch(url, "*duitang*")
@@ -84,29 +84,39 @@ function noGoSun(url, host){
 }
 
 function noGOMon(url, host) {
-    if (timeRange(6, 12)) {
+    if (timeRange(01,01,7,59)) {
+        return dummyProxy();
+    } else if (timeRange(8, 12)) {
         return noGo(url, host);
     } else if (timeRange(15,00, 16,59)){
         return noGo(url, host);
     } else if (timeRange(19, 21)){
         return noGo(url, host);
-    } else {
+    } else if (timeRange(21,01,23,59)) {
+        return dummyProxy();
+    }else {
         return "DIRECT";  
     }
 };
 
 function noGoTue(url, host) { 
-    if (timeRange(6, 12)) {
+    if (timeRange(01,01,7,59)) {
+        return dummyProxy();
+    } else if (timeRange(8, 12)) {
         return noGo(url, host);
     } else if (timeRange(15,00, 18,00)){
         return noGo(url, host);
+    } else if (timeRange(18,01,23,59)) {
+        return dummyProxy();
     } else {
         return "DIRECT";  
     }
 };
 
 function noGoWed(url, host){
-    if (timeRange(6, 12)) {
+    if (timeRange(01,01,7,59)) {
+        return dummyProxy();
+    } else if (timeRange(8, 12)) {
         return noGo(url, host);
     } else if (timeRange(14,00, 15,59)){
         return noGo(url, host);
@@ -122,7 +132,9 @@ function noGoThu(url, host){
 };
 
 function noGoFri(url, host){
-    if (timeRange(8, 12)) {
+    if (timeRange(01,01,7,59)) {
+        return dummyProxy();
+    } else if (timeRange(8, 12)) {
         return noGo(url, host);
     } else if (timeRange(14,00,17,59)){
         return dummyProxy();
@@ -134,10 +146,10 @@ function noGoFri(url, host){
 };
 
 function noGoSat(url, host){
-    if (timeRange(01,01, 10, 59)) {
+    if (timeRange(01,01, 9, 59)) {
         return dummyProxy();
-    } else if (timeRange(14,00,15,59)){
-        return dummyProxy();
+    } else if (timeRange(10,00,15,59)){
+        return noGo(url, host);
     } else if (timeRange(15, 20)){
         return noGo(url, host);
     } else if (timeRange(21, 01 , 23, 59)) {
