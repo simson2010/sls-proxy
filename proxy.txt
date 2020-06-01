@@ -32,6 +32,24 @@ function FindProxyForURL(url, host)
 //Return proxy processing by url
 function noGo(url, host){
     if ( 
+        shExpMatch(url, "*v.qq.com*") ||
+        shExpMatch(url, "*y.qq.com*") ||
+        shExpMatch(url, "*kantu.qq.com*") ||
+        shExpMatch(url, "*qqchess.qq.com*") ||
+        shExpMatch(url, "*pm.myapp.com*") ||
+        shExpMatch(url, "*dldir*.qq.com*") ||
+        shExpMatch(url, "*mac.qq.com*") ||
+        shExpMatch(url, "*pc.qq.com*") ||
+        shExpMatch(url, "*pay.qq.com*") ||
+        shExpMatch(url, "*shuoshuokong.com*") ||
+        shExpMatch(url, "*17qq.com*") || 
+        shExpMatch(url, "*buluo.qq.com*") ||
+        shExpMatch(url, "*vip.qq.com*") ||
+        shExpMatch(url, "*id.qq.com*") ||
+        shExpMatch(url, "*qqwmly.com*") ||
+        shExpMatch(url, "*keaidian.com*") ||
+        shExpMatch(url, "*haokan.baidu.com*") ||
+        shExpMatch(url, "*kuaikanmanhua.com*") ||
         shExpMatch(url, "*woyaogexing.com*") ||
         shExpMatch(url, "*100bt.com*") ||
         shExpMatch(url, "*dm5.com*") ||
@@ -51,8 +69,7 @@ function noGo(url, host){
         shExpMatch(url, "*qqtn.com*") ||
         shExpMatch(url, "*acs.youku.com*") ||
         shExpMatch(url, "*youku.com*") ||
-        shExpMatch(url, "*soman.com*") ||
-        shExpMatch(url, "*qq.com*") ||
+        shExpMatch(url, "*soman.com*") ||    
         shExpMatch(url, "*xiami.com*") ||
         shExpMatch(url, "*kugou.com*") ||
         shExpMatch(url, "*duitang*")

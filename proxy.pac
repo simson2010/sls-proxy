@@ -36,7 +36,6 @@ function noGo(url, host){
         shExpMatch(url, "*y.qq.com*") ||
         shExpMatch(url, "*kantu.qq.com*") ||
         shExpMatch(url, "*qqchess.qq.com*") ||
-        shExpMatch(url, "*itunes.apple.com*") ||
         shExpMatch(url, "*pm.myapp.com*") ||
         shExpMatch(url, "*dldir*.qq.com*") ||
         shExpMatch(url, "*mac.qq.com*") ||
