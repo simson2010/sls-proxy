@@ -121,7 +121,9 @@ function noGoTue(url, host) {
         return dummyProxy();
     } else if (timeRange(8, 12)) {
         return noGo(url, host);
-    } else if (timeRange(15,00, 18,00)){
+    } else if (timeRange(14,00, 15,00)) {
+        return "DIRECT";  
+    }else if (timeRange(15,10, 18,00)){
         return noGo(url, host);
     } else if (timeRange(18,01,23,59)) {
         return dummyProxy();
