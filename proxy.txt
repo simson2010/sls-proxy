@@ -76,7 +76,7 @@ function noGo(url, host){
     ) {
         return dummyProxy();
     } else { 
-        return "DIRECT";
+        return directProxy();
     };
 };
 
@@ -85,96 +85,78 @@ function dummyProxy(){
     return "PROXY 192.168.1.1:8080";
 };
 
+function directProxy() {
+    return "DIRECT";
+}
+
 //Each weekday processing
 function noGoSun(url, host){
-    if (timeRange(01,1, 10,59)) {
-        return dummyProxy();
-    } else if(timeRange(11,1, 18,59)) {
+    if (timeRange(00,01,19,59)) {
         return noGo(url, host);
-    } else if (timeRange(19,00, 21,00)){
-        return noGo(url, host);
-    } else if (timeRange(21,01, 23,59)) {
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else {
-        return "DIRECT";  
     }
 }
 
 function noGOMon(url, host) {
-    if (timeRange(01,01,7,59)) {
+    if (timeRange(00,01,19,59)) {
+        return noGo(url, host);
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else if (timeRange(8, 12)) {
-        return noGo(url, host);
-    } else if (timeRange(15,00, 16,59)){
-        return noGo(url, host);
-    } else if (timeRange(19, 21)){
-        return noGo(url, host);
-    } else if (timeRange(21,01,23,59)) {
-        return dummyProxy();
-    }else {
-        return "DIRECT";  
     }
 };
 
 function noGoTue(url, host) { 
-    if (timeRange(01,01,7,59)) {
-        return dummyProxy();
-    } else if (timeRange(8, 12)) {
+    if (timeRange(00,01,19,59)) {
         return noGo(url, host);
-    } else if (timeRange(14,00, 15,00)) {
-        return "DIRECT";  
-    }else if (timeRange(15,10, 18,00)){
-        return noGo(url, host);
-    } else if (timeRange(18,01,23,59)) {
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else {
-        return "DIRECT";  
     }
 };
 
 function noGoWed(url, host){
-    if (timeRange(01,01,7,59)) {
-        return dummyProxy();
-    } else if (timeRange(8, 12)) {
+    if (timeRange(00,01,19,59)) {
         return noGo(url, host);
-    } else if (timeRange(14,00, 15,59)){
-        return noGo(url, host);
-    } else if (timeRange(16, 20)){
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else {
-        return "DIRECT";  
     }
 };
 
 function noGoThu(url, host){
-    return noGoWed(url, host)
+    if (timeRange(00,01,19,59)) {
+        return noGo(url, host);
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
+        return dummyProxy();
+    }
 };
 
 function noGoFri(url, host){
-    if (timeRange(01,01,7,59)) {
-        return dummyProxy();
-    } else if (timeRange(8, 12)) {
+    if (timeRange(00,01,19,59)) {
         return noGo(url, host);
-    } else if (timeRange(14,00,17,59)){
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else if (timeRange(18,00, 21,50)){
-        return noGo(url, host);
-    } else {
-        return "DIRECT";  
     }
 };
 
 function noGoSat(url, host){
-    if (timeRange(01,01, 9, 59)) {
-        return dummyProxy();
-    } else if (timeRange(10,00,15,59)){
+    if (timeRange(00,01,19,59)) {
         return noGo(url, host);
-    } else if (timeRange(15, 20)){
-        return noGo(url, host);
-    } else if (timeRange(21, 01 , 23, 59)) {
+    } else if (timeRange(20,00,21,00)) {
+        return directProxy();
+    } else { 
         return dummyProxy();
-    } else {
-        return "DIRECT";  
     }
 }
 
