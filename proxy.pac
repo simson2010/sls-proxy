@@ -26,7 +26,7 @@ function FindProxyForURL(url, host)
         return noGoSat(url, host);
     }
 
-    return dummyProxy()
+    return directProxy();
 };
 
 //Return proxy processing by url
@@ -74,7 +74,7 @@ function noGo(url, host){
         shExpMatch(url, "*kugou.com*") ||
         shExpMatch(url, "*duitang*")
     ) {
-        return dummyProxy();
+        return directProxy();
     } else { 
         return directProxy();
     };
